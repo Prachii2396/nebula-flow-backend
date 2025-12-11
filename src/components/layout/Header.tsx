@@ -1,4 +1,5 @@
-import { Sparkles, Clock, LogOut, Rocket } from 'lucide-react';
+import { Sparkles, Clock, LogOut, Rocket, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
@@ -32,6 +33,19 @@ const Header = ({ username = 'Demo User', onHistoryClick, onSignOut }: HeaderPro
               <Sparkles className="w-4 h-4 text-primary" />
               <span>Welcome, <span className="text-foreground font-medium">{username}</span></span>
             </div>
+
+            {/* Timer Button */}
+            <Link to="/timer">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary animate-fade-in"
+                style={{ animationDelay: '0.15s' }}
+              >
+                <Timer className="w-4 h-4" />
+                <span className="hidden sm:inline">Timer</span>
+              </Button>
+            </Link>
 
             {/* History Button */}
             <Button
