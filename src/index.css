@@ -1,96 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Deep Space Theme */
+    --background: 230 25% 5%;
+    --foreground: 220 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 230 30% 8%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 230 30% 8%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cosmic Cyan/Teal Primary */
+    --primary: 180 70% 50%;
+    --primary-foreground: 230 25% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Nebula Purple Secondary */
+    --secondary: 260 60% 30%;
+    --secondary-foreground: 220 20% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Starlight Accent */
+    --accent: 200 80% 60%;
+    --accent-foreground: 230 25% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 220 20% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 230 30% 20%;
+    --input: 230 30% 15%;
+    --ring: 180 70% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Space Colors */
+    --space-deep: 230 40% 3%;
+    --space-void: 240 30% 6%;
+    --nebula-purple: 270 60% 40%;
+    --nebula-blue: 220 70% 35%;
+    --nebula-pink: 320 60% 45%;
+    --star-glow: 45 90% 80%;
+    --moon-glow: 40 80% 70%;
+    --planet-orange: 25 80% 50%;
+    --planet-blue: 210 80% 60%;
+    --planet-ring: 35 60% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Glass Effect */
+    --glass-bg: 230 30% 10%;
+    --glass-border: 230 30% 25%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-nebula: linear-gradient(135deg, hsl(270 60% 20% / 0.4), hsl(220 70% 25% / 0.3), hsl(320 60% 30% / 0.2));
+    --gradient-button: linear-gradient(135deg, hsl(180 70% 45%), hsl(200 80% 55%));
+    --gradient-button-hover: linear-gradient(135deg, hsl(180 70% 55%), hsl(200 80% 65%));
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 230 25% 5%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 180 70% 50%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 230 30% 15%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 230 30% 20%;
+    --sidebar-ring: 180 70% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 230 25% 5%;
+    --foreground: 220 20% 95%;
+    --card: 230 30% 8%;
+    --card-foreground: 220 20% 95%;
+    --popover: 230 30% 8%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 180 70% 50%;
+    --primary-foreground: 230 25% 5%;
+    --secondary: 260 60% 30%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 200 80% 60%;
+    --accent-foreground: 230 25% 5%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 220 20% 95%;
+    --border: 230 30% 20%;
+    --input: 230 30% 15%;
+    --ring: 180 70% 50%;
   }
 }
 
@@ -99,7 +99,210 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-glass-border rounded-2xl;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Nebula Background */
+  .nebula-bg {
+    background: 
+      radial-gradient(ellipse at 20% 20%, hsl(var(--nebula-purple) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(var(--nebula-blue) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 30%, hsl(var(--nebula-pink) / 0.1) 0%, transparent 40%),
+      hsl(var(--background));
+  }
+
+  /* Glowing Text */
+  .glow-text {
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.2);
+  }
+
+  /* Star Animation */
+  .star {
+    @apply absolute rounded-full bg-foreground;
+    animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+    animation-delay: var(--twinkle-delay, 0s);
+  }
+
+  /* Moon Glow */
+  .moon-glow {
+    box-shadow: 
+      0 0 60px 30px hsl(var(--moon-glow) / 0.3),
+      0 0 100px 60px hsl(var(--moon-glow) / 0.2),
+      0 0 140px 90px hsl(var(--moon-glow) / 0.1);
+  }
+
+  /* Planet Shadow */
+  .planet-shadow {
+    box-shadow: 
+      inset -20px -15px 40px rgba(0, 0, 0, 0.6),
+      0 0 30px 10px hsl(var(--planet-blue) / 0.2);
+  }
+
+  /* Input Glow Focus */
+  .input-glow:focus {
+    box-shadow: 
+      0 0 0 2px hsl(var(--primary) / 0.3),
+      0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  /* Button Cosmic */
+  .btn-cosmic {
+    @apply relative overflow-hidden;
+    background: var(--gradient-button);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-cosmic:hover {
+    background: var(--gradient-button-hover);
+    box-shadow: 
+      0 0 30px hsl(var(--primary) / 0.4),
+      0 0 60px hsl(var(--primary) / 0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn-cosmic::before {
+    content: '';
+    @apply absolute inset-0 opacity-0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: opacity 0.3s;
+  }
+
+  .btn-cosmic:hover::before {
+    @apply opacity-100;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@layer utilities {
+  /* Parallax Effect */
+  .parallax {
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+
+  .float-reverse {
+    animation: float-reverse 8s ease-in-out infinite;
+  }
+
+  /* Orbit Animation */
+  .orbit {
+    animation: orbit 20s linear infinite;
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+}
+
+/* Keyframes */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-2deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 0 40px hsl(var(--primary) / 0.5),
+      0 0 80px hsl(var(--primary) / 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes moon-drift {
+  0% { transform: translateX(100vw) translateY(0); }
+  100% { transform: translateX(-100vw) translateY(50px); }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px) translateY(300px);
+    opacity: 0;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
 }
